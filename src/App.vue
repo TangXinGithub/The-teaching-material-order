@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!--   导航条-->
+<navigation></navigation>
+
+
+
+    <router-view></router-view> <!--有这个才能显示-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import Navigation from "@/components/navigation";
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Navigation,
+
+
   }
 }
 </script>
