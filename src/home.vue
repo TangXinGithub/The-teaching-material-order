@@ -1,13 +1,15 @@
 <template>
-    <div>
+    <div id="app1">
         <P>home展示页</P>
 
     </div>
 </template>
 
 <script>
+
     export default {
-        name: "home"
+        name: "home",
+
     }
 </script>
 
