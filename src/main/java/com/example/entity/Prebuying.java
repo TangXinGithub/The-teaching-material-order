@@ -1,0 +1,103 @@
+package com.example.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class Prebuying  implements Serializable {
+    private Integer id;
+    private String ISBN;
+    private String bookname;
+    private Double pricing;
+    private String press;
+    private String author;
+    private Integer count;
+    private Integer pagenum;
+    private Integer sumtotal;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public String getBookname() {
+        return bookname;
+    }
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
+    }
+
+    public Double getPricing() {
+        return pricing;
+    }
+
+    public void setPricing(Double pricing) {
+        this.pricing = pricing;
+    }
+
+    public String getPress() {
+        return press;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public Integer getPagenum() {
+        return pagenum;
+    }
+
+    public void setPagenum(Integer pagenum) {
+        this.pagenum = pagenum;
+    }
+
+    public Integer getSumtotal() {
+        return sumtotal;
+    }
+
+    public void setSumtotal(Integer sumtotal) {
+        this.sumtotal = sumtotal;
+    }
+
+    @Override
+    public String toString() {
+        return "Prebuying{" +
+                "id=" + id +
+                ", ISBN='" + ISBN + '\'' +
+                ", bookname='" + bookname + '\'' +
+                ", pricing=" + pricing +
+                ", press='" + press + '\'' +
+                ", author='" + author + '\'' +
+                ", count=" + count +
+                ", pagenum=" + pagenum +
+                ", sumtotal=" + sumtotal +
+                '}';
+    }
+}

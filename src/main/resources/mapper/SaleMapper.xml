@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.mapper.SaleMapper">
+
+    <!-- 查询所有 -->
+    <select id="findAll" resultType="com.example.entity.Prebuying">
+        SELECT * FROM prebuying
+    </select>
+
+    <!-- 根据ID查询 -->
+    <select id="findById" resultType="com.example.entity.Prebuying" parameterType="Integer">
+        SELECT * FROM prebuying WHERE count =0
+    </select>
+
+    <!-- 创建 -->
+    <insert id="create" parameterType="com.example.entity.Prebuying">
+        INSERT INTO prebuying(username, password) VALUES (#{username}, #{password})
+    </insert>
+
+
+
+    <!-- 删除 -->
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM prebuying WHERE id = #{id}
+    </delete>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.example.entity.Prebuying">
+        UPDATE prebuying SET WHERE 1=1
+        <if test="bookname != null">
+            bookname = #{bookname},
+        </if>
+        <if test="ISBN != null">
+            ISBN = #{ISBN}
+        </if>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据用户名查询 -->
+    <select id="findByName" parameterType="String" resultType="com.example.entity.Prebuying">
+        SELECT * FROM prebuying WHERE bookname = #{bookname}
+    </select>
+    <!--查询订单-->
+
+
+</mapper>

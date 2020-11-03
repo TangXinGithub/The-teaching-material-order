@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.mapper.BuyingMapper">
+    <!--生成订单-->
+    <insert id="add"  parameterType="com.example.entity.Buying">
+      insert into buying
+      (id,ISBN,bookname,pricing,press,author,count,pagenum,sumtotal)values
+      (
+      #{id},#{ISBN},#{bookname},#{pricing},#{press},#{author},#{count},#{pagenum},#{sumtotal}
+      )
+
+      <!--查询所有-->
+    </insert>
+    <select id="queryBuyingList" resultType="com.example.entity.Buying">
+      select * from buying
+    </select>
+    <!--添加状态-->
+    <delete id="addStatus" parameterType="Integer">
+        UPDATE buying set status=500 WHERE id = #{id}
+    </delete>
+
+    <update id="createAutoTaskResult" parameterType="map">
+        create table ${tableName} (
+
+        ISBN char(100),
+        number char (100)
+
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+        insert into ${tableName}(ISBN,number)values
+        <foreach collection="cloums" item="listItem" separator=",">
+            ( ' ${listItem.ISBN} ', ' ${listItem.number}')
+        </foreach>
+
+
+
+    </update>
+    <select id="selectTaskResult" parameterType="map" resultType="java.util.Map">
+        select * from ${tableName} where
+        date between #{startDate,jdbcType=DATE} and #{endDate,jdbcType=DATE}
+    </select>
+</mapper>
