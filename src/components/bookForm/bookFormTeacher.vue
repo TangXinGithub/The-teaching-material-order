@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Table border ref="selection" :columns="columns4" :data="data1" ></Table>
+    <Table  height="700"  border ref="selection" :columns="columns4" :data="data1" ></Table>
     <br>
     <Button @click="submitOder()">提交订单</Button>
   </div>
@@ -55,7 +55,7 @@ th=this;
             },
             {
               title: 'ISBN',
-              key: 'isbn'
+              key: 'aISBN'
             },
             {
               title:'出版社',
@@ -153,9 +153,7 @@ th=this;
             //处理一下数据
             for(let j=0;j<up.length;j++){
               delete up[j].id; //删除id
-              let aisbn=up[j].isbn;
-              delete up[j].isbn;//删除原来的
-              up[j].aISBN=aisbn;
+
 
               //交换orderNumber
               up[j].count=up[j].orderNumber;

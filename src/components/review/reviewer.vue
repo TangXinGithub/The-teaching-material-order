@@ -30,6 +30,31 @@
                 //把审核状态代码换成相应的审核状态
                 //switch
                         this._data.data9=res.data;//更新数据
+for (let ii=0;ii<res.data.length;ii++) {
+
+    switch (parseInt(res.data[ii].status)) {
+        case 501: {
+            res.data[ii].status = "审核通过";
+            break;
+        }
+        case 500: {
+            res.data[ii].status = "未审核";
+            break;
+        }
+        case 502: {
+            res.data[ii].status = "未通过审核";
+            break;
+        }
+        case 503: {
+            res.data[ii].status = "未知错误";
+            break;
+        }
+        default: {
+            res.data[ii].status = "默认未知"
+        }
+    }
+
+}
 
             }).catch((err)=>{
                 console.log("审核人员查看订单发生的错误：",err);

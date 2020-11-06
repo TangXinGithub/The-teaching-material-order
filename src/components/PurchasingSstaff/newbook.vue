@@ -179,8 +179,17 @@
 console.log("提交的数据",this.data);
                     this.$http.post("/api/add/book",this.data).then((res)=>{
 
+                        this.$Notice.success({
+                            title: '添加新书成功',
+                            desc: true ? '' : 'Here is 添加新书成功提交返回的消息 '
+                        });
+
                         console.log("添加新书成功提交返回的消息",res);
                     }).catch((err)=>{
+                        this.$Notice.warning({
+                            title: '添加新书出现错误',
+                            desc: true ? '' : 'Here is 添加新书出现错误 '
+                        });
                         console.log("添加新书出现错误：",err);
                     });
 

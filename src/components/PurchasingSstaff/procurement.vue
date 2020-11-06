@@ -237,7 +237,7 @@ let purchaseNumber=new HashMap();//保存选购的数量数组
                         }
                     }).catch((err)=>{
                         //something wrong
-                        this.$Message.error('This is something wrong in submit process');
+                        this.$Message.error('This is something wrong in submit process because it is no realized! ');
                     });
             },
             cancel(){

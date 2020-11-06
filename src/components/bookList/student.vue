@@ -125,8 +125,8 @@
                               //判断状态
                               let st="未知";
                               switch (parseInt(res.data[i].status)) {
-                                case 500: {st="审核通过";break;}
-                                case 501: {st="未审核";break;}
+                                case 501: {st="审核通过";break;}
+                                case 500: {st="未审核";break;}
                                 case 502: {st="未通过审核";break;}
                                 case 503: {st="未知错误";break;}
                                 default:{st="默认错误"}

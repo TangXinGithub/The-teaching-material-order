@@ -6,16 +6,16 @@ const path = require('path')
 
 module.exports = {
   dev: {
-// env:require('./dev.env'),//这个是跨域加上去的,包括下面的proxyTable内容
+env:require('./dev.env'),//这个是跨域加上去的,包括下面的proxyTable内容
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-		// '/api':{
-		// 	target:'http://10.0.0.2:8085',//这里放了nginx ,nginx中设置了可以跨域,nginx 代理会去找真正的服务,为了不修改这里而重启麻烦而用nginx作了代理
-		// 	changeOrigin:true,
+		'/api':{
+			target:'http://192.168.43.220:8088',//这里放了nginx ,nginx中设置了可以跨域,nginx 代理会去找真正的服务,为了不修改这里而重启麻烦而用nginx作了代理
+			changeOrigin:true,
 			
-		// }
+		}
 		
 	},
 
